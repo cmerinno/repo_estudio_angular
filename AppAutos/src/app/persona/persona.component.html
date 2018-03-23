@@ -1,0 +1,54 @@
+<h1>
+    Datos Generales</h1>
+  <div>
+    <form #formPersona="ngForm" (ngSubmit)="onSubmit(); formPersona.reset();">
+      <p>
+        <label for="nombre">Nombre:</label>
+  
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre:" required #nombre="ngModel" [(ngModel)]="persona.nombre">
+        <span *ngIf="nombre.touched && !nombre.valid">
+          Valor Incorrecto
+        </span>
+      </p>
+      <p>
+        <label for="apellido">Apellido:</label>
+     <input type="text" id="apellido" name="apellido" placeholder="Apellido:" required #apellido="ngModel" [(ngModel)]="persona.apellido">
+        <span *ngIf="apellido.touched && !apellido.valid">
+          Valor Incorrecto
+        </span>
+      </p>
+      <p>
+        <label for="rut">Rut:</label>
+  <input type="text" id="rut" name="rut"    
+                #rut="ngModel" [(ngModel)]="persona.rut" placeholder="Rut:" required pattern="[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9Kk]{1}" >
+        <span *ngIf="rut.touched && !rut.valid">
+          Valor Incorrecto
+        </span>
+      </p>
+      <p>
+        <label for="mail">Email:</label>
+  
+        <input type="email" id="mail" name="mail" placeholder="Email:" required #mail="ngModel" pattern="[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}" [(ngModel)]="persona.email">
+        <span *ngIf="mail.touched && !mail.valid">
+          Valor Incorrecto
+        </span>
+      </p>
+  
+      <input type="submit" value="Guardar" [disabled]="!formPersona.form.valid">
+    </form>
+  </div>
+  <div class="listado">
+      <h4>Listado de personas</h4>
+      <ul>
+        <li *ngFor="let persona of personas">
+            {{persona.nombre}} - {{persona.apellido }} - {{persona.rut}} - {{persona.email}}
+        </li>
+      </ul>
+
+      <select id="listado">
+          <option selected="selected" disabled>Persona...</option>
+          <option *ngFor="let persona of personas" [value]="persona.rut">{{persona.nombre}}</option>
+        </select>
+        <button type="button" >Eliminar</button>
+        
+    </div>
