@@ -34,7 +34,7 @@
         </span>
       </p>
   
-      <input type="submit" value="Guardar" [disabled]="!formPersona.form.valid">
+      <input id="eliminar" type="submit" value="Guardar" [disabled]="!formPersona.form.valid">
     </form>
   </div>
   <div class="listado">
@@ -49,6 +49,6 @@
           <option selected="selected" disabled>Persona...</option>
           <option *ngFor="let persona of personas" [value]="persona.rut">{{persona.nombre}}</option>
         </select>
-        <button type="button" >Eliminar</button>
+        <button id="eliminar" type="button" >Eliminar</button>
         
     </div>

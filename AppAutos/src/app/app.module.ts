@@ -4,8 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
-import { routing, appRoutingProviders } from './app.routing';
 import { PersonaComponent } from './persona/persona.component';
+import { routing, appRoutingProviders } from './app.routing';
+import { HttpModule} from '@angular/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { PersonaComponent } from './persona/persona.component';
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
