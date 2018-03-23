@@ -1,0 +1,41 @@
+<h1>
+  Componente de autos</h1>
+<div>
+  <form #formCar="ngForm" (ngSubmit)="onSubmit(); formCar.reset();">
+    <p>
+      <label for="nombre">Nombre:</label>
+
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre:" required #nombre="ngModel" [(ngModel)]="car.brand">
+
+    </p>
+    <p>
+      <label for="modelo">Modelo:</label>
+
+      <input type="text" id="modelo" name="modelo" placeholder="Modelo:" required #modelo="ngModel" [(ngModel)]="car.model">
+
+    </p>
+    <p>
+      <label >Kilometraje:</label>
+
+      <input type="text" id="km" name="km"    
+              #km="ngModel" [(ngModel)]="car.miles" required pattern="[0-9]+" >
+
+    </p>
+    <p>
+      <label for="color">Color::</label>
+
+      <input type="text" id="color" name="color" placeholder="Color:" required #color="ngModel" [(ngModel)]="car.color">
+
+    </p>
+
+    <input type="submit" value="Guardar" [disabled]="!formCar.form.valid">
+  </form>
+</div>
+<div class="listado">
+  <h4>Listado de autos</h4>
+  <ul>
+    <li *ngFor="let car of cars">
+        {{car.brand}} - {{car.model }} - {{car.miles}} - {{car.color}}
+    </li>
+  </ul>
+</div>

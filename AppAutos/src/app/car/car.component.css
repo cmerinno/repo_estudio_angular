@@ -1,0 +1,17 @@
+input[type=text]{
+display: block;
+width: 100%;
+}
+
+
+div {
+  float: left;
+}
+
+form {
+  width: 200px;
+}
+
+.listado {
+  margin-left: 200px;
+}
