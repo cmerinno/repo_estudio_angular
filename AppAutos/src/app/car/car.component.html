@@ -6,26 +6,34 @@
       <label for="nombre">Nombre:</label>
 
       <input type="text" id="nombre" name="nombre" placeholder="Nombre:" required #nombre="ngModel" [(ngModel)]="car.brand">
-
+      <span *ngIf="nombre.touched && !nombre.valid">
+        Valor Incorrecto
+      </span>
     </p>
     <p>
       <label for="modelo">Modelo:</label>
 
       <input type="text" id="modelo" name="modelo" placeholder="Modelo:" required #modelo="ngModel" [(ngModel)]="car.model">
-
+      <span *ngIf="modelo.touched && !modelo.valid">
+        Valor Incorrecto
+      </span>
     </p>
     <p>
-      <label >Kilometraje:</label>
+      <label for="km">Kilometraje:</label>
 
       <input type="text" id="km" name="km"    
-              #km="ngModel" [(ngModel)]="car.miles" required pattern="[0-9]+" >
-
+              #km="ngModel" [(ngModel)]="car.miles" required pattern="[0-9]+" placeholder="Kilometraje:">
+      <span *ngIf="km.touched && !km.valid">
+        Valor Incorrecto
+      </span>
     </p>
     <p>
       <label for="color">Color::</label>
 
       <input type="text" id="color" name="color" placeholder="Color:" required #color="ngModel" [(ngModel)]="car.color">
-
+      <span *ngIf="color.touched && !color.valid">
+        Valor Incorrecto
+      </span>
     </p>
 
     <input type="submit" value="Guardar" [disabled]="!formCar.form.valid">

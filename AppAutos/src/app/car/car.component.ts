@@ -11,7 +11,6 @@ export class CarComponent implements OnInit {
   public cars: Array<Car>;
 
   constructor() {
-    console.log('constructor');
     this.car = new Car('', '', 0, '');
     this.cars = [
       new Car('Mistsubichi', 'L200', 0, 'Black'),
