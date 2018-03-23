@@ -1,0 +1,9 @@
+<div class="listado">
+  <h4>Listado de Perros Local</h4>
+  <ul>
+    <li *ngFor="let breed of breeds">
+      <a [routerLink]="['/images', {id: breed.breed}]">{{breed.breed}}</a>
+      <a [routerLink]="['/perros']">{{breed.breed}}</a>
+    </li>
+  </ul>
+</div>
