@@ -1,0 +1,12 @@
+<h1>
+  Listado Razas Locales</h1>
+<div>
+  <form #formPerros="ngForm" (ngSubmit)="onSubmit(breed); formPerros.reset();">
+    <select id="listado" [(ngModel)]="breed" name="listado">
+      <option selected="selected" disabled>Razas...</option>
+      <option *ngFor="let breed of breeds" [value]="breed" >{{breed.raza}}</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary manage">Ver Imagen</button>    
+  </form>
+</div>
